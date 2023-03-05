@@ -46,7 +46,7 @@ def CrearAbout(chat):
     descripcion_industria = CustomThread(target=descripcion_general,args=(chat.tipo_industria,chat.tipo_servicio))
     
     descripcion_industria.start()
-    sendWhatsAppMessage(chat.perfil.phoneNumber,     descripcion_industria.join() )
+    sendWhatsAppMessage(chat.perfil.phoneNumber,descripcion_industria.join())
 
 def handleWhatsAppChat(fromId, profileName, phoneId,text):
     try:
@@ -78,7 +78,7 @@ def handleWhatsAppChat(fromId, profileName, phoneId,text):
                 if chat.comentario:
                     message ="danos un momento"
                     sendWhatsAppMessage(fromId,message)
-                    CrearAbout(chat)
+                    #CrearAbout(chat)
                     return ''
                 else:
                     chat.comentario=text

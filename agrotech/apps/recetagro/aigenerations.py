@@ -18,7 +18,7 @@ def descripcion_general(tipo_industria,tamaño_empresa):
     if 'choices' in response:
         if len(response['choices'])>0:
             answer = response['choices'][0]['text'].replace('\n','\n')
-            return nombre_empresa+answer
+            return tipo_industria+answer
         else:
             return ''
     else:
