@@ -54,7 +54,7 @@ class ChatSessions(models.Model):
     tipo_industria = models.TextField(null=True, blank=True)
     tipo_servicio = models.TextField(null=True, blank=True)
     tamaño_industria = models.TextField(choices=opciones, null=True, blank=True)
-    comentario = models.TextField(choices=opciones, null=True, blank=True)
+    comentario = models.TextField(null=True, blank=True)
     
     
     perfil = models.ForeignKey(Perfil,on_delete=models.CASCADE,null=True,blank=True)
