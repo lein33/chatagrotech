@@ -132,8 +132,3 @@ MEDIA_URL = '/uploads/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-WHATSAPP_URL = 'https://graph.facebook.com/v15.0/104915195874424/messages'
-WHATSAPP_TOKEN='Bearer EAAWK0JYwSMsBAD0WM9ZBBrXaZBOTDMGvpMijK7oEBiAX2kKv5sU7LZBg7GZAC3Hatt3rZCjux4FZAO4OvuZAW4ofWHYKhBT5rqKGJTYEnxVR4uMNHidpI2RxQjQZBxQ0yvJSqa9g4qYgffQ8XSCExXRSBs6l9Wp9F1DuCD0Mfb0tZCXFf2uUq9jke6B1KaL6Kirf0AsgWQzmPZAwZDZD'
-
-#OPENAI_API_KEY = "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"
