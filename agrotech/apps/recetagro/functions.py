@@ -65,7 +65,7 @@ def handleWhatsAppChat(fromId, profileName, phoneId,text):
         chat = ChatSessions.objects.create(perfil=user_profile)
         message ="Bienvenido al asistente EL Plan estrategico Empresarial 🧔‍♂️🧔👩‍🦳🌰"
         sendWhatsAppMessage(fromId,message)
-    
+    """
     if chat.tipo_industria:
         if chat.tipo_servicio:
             if chat.tamaño_industria:
@@ -116,6 +116,6 @@ def handleWhatsAppChat(fromId, profileName, phoneId,text):
         sendWhatsAppMessage(fromId,message)
         #sendWhatsAppMedia(fromId)
 
-
+    """
 
 
