@@ -74,3 +74,9 @@ def handleWhatsAppChat(fromId, profileName, phoneId,text):
             chat.save()
             message="Que tamaño necesitas"
             sendWhatsAppMessage(fromId,message)
+    else:
+        chat.tipo_industria=text
+        chat.save()
+        message="Porfavor, Ahora ingresa tipo de servicio"
+        sendWhatsAppMessage(fromId,message)
+        #sendWhatsAppMedia(fromId)
