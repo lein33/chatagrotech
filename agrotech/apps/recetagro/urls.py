@@ -4,7 +4,7 @@ from . import views
 
 urlpatterns = [
     path('', views.home,name='home'),
-	#path('test',views.whatsAppWebhook,name='whatsapp-webhook'),
+	path('test',views.whatsAppWebhook,name='whatsapp-webhook'),
     
 
 ]
