@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse, HttpResponse
 from django.conf import settings
-#from .functions import *
+from .functions import *
 from .models import *
 import json
 
@@ -43,9 +43,9 @@ def whatsAppWebhook(request):
                         fromId = entry['changes'][0]['value']['messages'][0]['from']
                         text = entry['changes'][0]['value']['messages'][0]['text']['body']
 
-#                        message = '{} {} {} {}'.format(text,phoneId,fromId,profileName) 
+                        message = '{} {} {} {}'.format(text,phoneId,fromId,profileName) 
 #                        handleWhatsAppChat(fromId, profileName, phoneId ,text)
-#                        sendWhatsAppMessage(fromId, message)
+                        sendWhatsAppMessage(fromId, message)
                         
 
                 else:
