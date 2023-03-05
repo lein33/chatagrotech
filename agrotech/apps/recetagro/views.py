@@ -15,7 +15,7 @@ import os
 # Create your views here.
 def home(request):
     return render(request,'index.html',{})
-
+"""
 @csrf_exempt
 def whatsAppWebhook(request):
     if request.method == 'GET':
@@ -54,3 +54,4 @@ def whatsAppWebhook(request):
             else:
                 pass
         return HttpResponse('success',status=200)
+"""
