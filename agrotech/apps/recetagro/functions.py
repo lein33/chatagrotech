@@ -65,5 +65,57 @@ def handleWhatsAppChat(fromId, profileName, phoneId,text):
         chat = ChatSessions.objects.create(perfil=user_profile)
         message ="Bienvenido al asistente EL Plan estrategico Empresarial 🧔‍♂️🧔👩‍🦳🌰"
         sendWhatsAppMessage(fromId,message)
+    
+    if chat.tipo_industria:
+        if chat.tipo_servicio:
+            if chat.tamaño_industria:
+                if chat.comentario:
+                        sendWhatsAppMessage(fromId,"danos un momento")
+
+                else:
+                    chat.comentario = text
+                    chat.save()
+                    message ="estamos trabajando en tu pedido"
+                    sendWhatsAppMessage(fromId,message)
+            else:
+                chat.tamaño_industria = text
+                chat.save()
+                message ="ingresa algun comentario"
+                sendWhatsAppMessage(fromId,message)
+        else:
+            try:
+                type =  int(text.replace(' ',''))
+                if type == 1:
+                    chat.tamaño_industria='pequeño'
+                    chat.save()
+                    message="Que tamaño necesitas"
+                    sendWhatsAppMessage(fromId,message)
+                elif type == 2:
+                    chat.tamaño_industria='mediano'
+                    chat.save()
+                    message="Que tamaño necesitas"
+                    sendWhatsAppMessage(fromId,message)
+                elif type == 3:
+                    chat.tamaño_industria='grande'
+                    chat.save()
+                    message="Que tamaño necesitas"
+                    sendWhatsAppMessage(fromId,message)
+                else:
+                    message="intentalo otra vez"
+                    sendWhatsAppMessage(fromId,message)      
+            except:
+                message="intentalo otra vez"
+                sendWhatsAppMessage(fromId,message)
+
+        
+
+    else:
+        chat.nombre_empresa=text
+        chat.save()
+        message="Porfavor, Ahora ingresa negocio"
+        sendWhatsAppMessage(fromId,message)
+        #sendWhatsAppMedia(fromId)
+
+
 
 
