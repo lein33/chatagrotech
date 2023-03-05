@@ -86,12 +86,12 @@ def handleWhatsAppChat(fromId, profileName, phoneId,text):
             try:
                 type =  int(text.replace(' ',''))
                 if type == 1:
-                    chat.tamaño_industria='pequeño'
+                    chat.tamaño_industria='pequeña'
                     chat.save()
                     message="Que tamaño necesitas"
                     sendWhatsAppMessage(fromId,message)
                 elif type == 2:
-                    chat.tamaño_industria='mediano'
+                    chat.tamaño_industria='media'
                     chat.save()
                     message="Que tamaño necesitas"
                     sendWhatsAppMessage(fromId,message)
