@@ -69,8 +69,16 @@ def handleWhatsAppChat(fromId, profileName, phoneId,text):
     if chat.tipo_industria:
         if chat.tipo_servicio:
             if chat.tamaño_industria:
-
-                pass
+                if chat.comentario:
+                    message ="danos un momento"
+                    sendWhatsAppMessage(fromId,message)
+                    return ''
+                else:
+                    chat.comentario=text
+                    chat.save()
+                    message="Nostros tenemos lo que buscas"
+                    sendWhatsAppMessage(fromId,message)
+                
             else:
                 try:
                     type =  int(text.replace(' ',''))
