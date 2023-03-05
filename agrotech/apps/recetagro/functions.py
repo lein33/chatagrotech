@@ -7,7 +7,7 @@ from django.shortcuts import render
 
 from django.http import HttpResponse
 from django.shortcuts import render
-
+from .aigenerations import *
 import pdfkit
 from django.template.loader import get_template
 #from .aigenerations import *
@@ -42,6 +42,12 @@ def sendWhatsAppMessage(phoneNumber, message):
     ans = response.json()
     return ans
 
+def CrearAbout(chat):
+    descripcion_industria = CustomThread(target=descripcion_general,args=(chat.tipo_industria,chat.tipo_servicio))
+    
+    descripcion_industria.start()
+    sendWhatsAppMessage(chat.perfil.phoneNumber,     descripcion_industria.join() )
+
 def handleWhatsAppChat(fromId, profileName, phoneId,text):
     try:
         chat = ChatSessions.objects.get(perfil__phoneNumber=fromId)
@@ -72,6 +78,7 @@ def handleWhatsAppChat(fromId, profileName, phoneId,text):
                 if chat.comentario:
                     message ="danos un momento"
                     sendWhatsAppMessage(fromId,message)
+                    CrearAbout(chat)
                     return ''
                 else:
                     chat.comentario=text
