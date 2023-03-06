@@ -95,6 +95,7 @@
 				<h1 class="maintitle">
 				<span>Descripcion general</span>
 				</h1>
+				{% for about in about %}
 				<p>
 					<span class="dropcap">D</span>{{about.descripcion_general}}
 				</p>
@@ -102,7 +103,7 @@
 					<li><i class="icon-double-angle-right"></i> Pendiente </li>
 					
 				</ul>
-				
+				{% endfor %}
 			</div>
 			<!-- TESTIMONIALS-->
 			<div class="c4">
