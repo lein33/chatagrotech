@@ -43,10 +43,23 @@ def sendWhatsAppMessage(phoneNumber, message):
 
 def CrearAbout(chat):
     descripcion_industria = CustomThread(target=descripcion_general,args=(chat.tipo_industria,chat.tipo_servicio))
-    
-    descripcion_industria.start()
-    sendWhatsAppMessage(chat.perfil.phoneNumber, descripcion_industria.join())
+    servicios_ia = CustomThread(target=servicios,args=(chat.tipo_industria,chat.tipo_servicio))
+    razones_ia = CustomThread(target=razones,args=(chat.tipo_industria,chat.tipo_servicio,chat.tamaño_industria))
+    comentario_ia = CustomThread(target=comentario,args=(chat.tipo_industria,chat.tamaño_industria))
 
+    descripcion_industria.start()
+    servicios_ia.start()
+    razones_ia.start()
+    comentario.start()
+
+
+    about = About.objects.create(
+        descripcion_general=descripcion_industria.join(),
+        servicios=servicios_ia.join(),
+        razones=razones_ia.join(),
+        comentario=comentario_ia.join(),
+    )
+    about.save()
     
 
 def handleWhatsAppChat(fromId, profileName, phoneId,text):
