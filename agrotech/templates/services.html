@@ -159,24 +159,7 @@
 					</p>
 					{% endfor %}
 				</div>
-				<!-- service 2-->
-				<div class="c4">
-					<h1 class="subtitles">
-					<span class="serviceicon"><i class="icon-cog rotate"></i></span><br/>
-					Color Schemes</h1>
-					<p>
-						 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam hendrerit lacus mattis orci fermentum mollis iaculis purus lobortis. In et purus ut nunc elementum dapibus facilisis.
-					</p>
-				</div>
-				<!-- service 3-->
-				<div class="c4">
-					<h1 class="subtitles">
-					<span class="serviceicon"><i class="icon-heart rotate"></i></span><br/>
-					Fully Responsive</h1>
-					<p>
-						 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam hendrerit lacus mattis orci fermentum mollis iaculis purus lobortis. In et purus ut nunc elementum dapibus.
-					</p>
-				</div><!-- end service 3-->
+				
 			</div>
 			<!-- END SERVICES-->
 			
@@ -187,7 +170,7 @@
 				</h1>
 				{% for about in about %}
 				<dl class="faqs nopadding noborder">
-					<dt>{{about.perfil.user}}</dt>
+					<dt>{{about.id}}</dt>
 					<dd style="display: none;">{{about.razones}}</dd>
 					
 				</dl>
