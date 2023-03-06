@@ -14,7 +14,7 @@ from django.template.loader import get_template
 import os
 def home(request):
 
-    return render(request,'about.html',{})
+    return render(request,'index.html',{})
 
 @csrf_exempt
 def whatsAppWebhook(request):
