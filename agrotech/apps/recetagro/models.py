@@ -39,7 +39,7 @@ class About(models.Model):
     ultima_edicion = models.DateTimeField(blank=True,null=True)
     
     def __str__(self):
-        return self.perfil.phoneNumber
+        return self.uniqueId
     
     def save(self,*args,**kwargs):
         if self.fecha_creacion is None:
