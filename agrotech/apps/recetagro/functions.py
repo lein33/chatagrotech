@@ -60,7 +60,7 @@ def CrearAbout(chat):
         comentario=comentario_ia.join(),
     )
     about.save()
-    
+    sendWhatsAppMessage(chat.phonNumber,"terminado")
 
 def handleWhatsAppChat(fromId, profileName, phoneId,text):
     try:
