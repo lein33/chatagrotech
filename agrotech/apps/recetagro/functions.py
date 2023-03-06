@@ -50,7 +50,7 @@ def CrearAbout(chat):
     descripcion_industria.start()
     servicios_ia.start()
     razones_ia.start()
-    comentario.start()
+    comentario_ia.start()
 
 
     about = About.objects.create(
