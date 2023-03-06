@@ -146,16 +146,18 @@
 			<!-- BEGIN SERVICES-->
 			<div class="c8 text-center">
 				<h1 class="maintitle text-center">
-				<span>More Services</span>
+				<span>Servicios</span>
 				</h1>
 				<!-- service 1-->
 				<div class="c4">
 					<h1 class="subtitles">
 					<span class="serviceicon"><i class="icon-pushpin rotate"></i></span><br/>
 					20+ HTML Pages </h1>
+					{% for about in about %}
 					<p>
-						 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam hendrerit lacus mattis orci fermentum mollis iaculis purus lobortis. In et purus ut nunc elementum dapibus.
+						 {{about.servicios}}
 					</p>
+					{% endfor %}
 				</div>
 				<!-- service 2-->
 				<div class="c4">
