@@ -13,7 +13,7 @@ import pdfkit
 from django.template.loader import get_template
 import os
 def home(request):
-    
+
     return render(request,'about.html',{'about':About.objects.all()})
 
 @csrf_exempt
