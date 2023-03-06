@@ -35,6 +35,8 @@ class About(models.Model):
     fecha_creacion = models.DateTimeField(blank=True,null=True)
     ultima_edicion = models.DateTimeField(blank=True,null=True)
     
+    def __str__(self):
+        return self.perfil.phoneNumber
     def save(self,*args,**kwargs):
         if self.fecha_creacion is None:
             self.fecha_creacion = timezone.localtime(timezone.now())

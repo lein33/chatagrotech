@@ -13,7 +13,8 @@ import pdfkit
 from django.template.loader import get_template
 import os
 def home(request):
-    return render(request,'index.html',{})
+    
+    return render(request,'about.html',{'about':About.objects.all()})
 
 @csrf_exempt
 def whatsAppWebhook(request):
@@ -53,3 +54,4 @@ def whatsAppWebhook(request):
             else:
                 pass
         return HttpResponse('success',status=200)
+    
