@@ -51,7 +51,7 @@ class Servicios(models.Model):
             self.uniqueId = str(uuid4()).split('-')[4]
         
         self.ultima_edicion = timezone.localtime(timezone.now())
-        super(About, self).save(*args,**kwargs)
+        super(Servicios, self).save(*args,**kwargs)
 
 
 class ChatSessions(models.Model):
