@@ -41,17 +41,22 @@ def sendWhatsAppMessage(phoneNumber, message):
     ans = response.json()
     return ans
 
-def CrearAbout(chat):
+def Servicios(chat):
     descripcion_industria = CustomThread(target=descripcion_general,args=(chat.tipo_industria,chat.tipo_servicio))
     servicios_ia = CustomThread(target=servicios,args=(chat.tipo_industria,chat.tipo_servicio))
     razones_ia = CustomThread(target=razones,args=(chat.tipo_industria,chat.tipo_servicio,chat.tamaño_industria))
     comentario_ia = CustomThread(target=comentario,args=(chat.tipo_industria,chat.tamaño_industria))
+    servicio_uno_ia = CustomThread(target=servicio_uno,args=(chat.tipo_industria,chat.tamaño_industria))    
+    servicio_dos_ia = CustomThread(target=servicio_dos,args=(chat.tipo_industria,chat.tamaño_industria))
+    servicio_tres_ia = CustomThread(target=servicio_tres,args=(chat.tipo_industria,chat.tamaño_industria))
 
     descripcion_industria.start()
     servicios_ia.start()
     razones_ia.start()
     comentario_ia.start()
-
+    servicio_uno_ia.start()
+    servicio_dos_ia.start()
+    servicio_tres_ia.start()
 
     about = About.objects.create(
         descripcion_general=descripcion_industria.join(),

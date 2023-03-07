@@ -27,14 +27,14 @@ class Perfil(models.Model):
         self.ultima_edicion = timezone.localtime(timezone.now())
         super(Perfil, self).save(*args,**kwargs)
 
-class About(models.Model):
+class Servicios(models.Model):
     perfil = models.ForeignKey(Perfil,on_delete=models.CASCADE,null=True,blank=True)
     descripcion_general = models.TextField(null=True, blank=True)
     servicio = models.TextField(null=True, blank=True)
     servicio_uno = models.TextField(null=True, blank=True)
     servicio_dos = models.TextField(null=True, blank=True)
     servicio_tres = models.TextField(null=True, blank=True)
-    razones = models.TextField(null=True, blank=True)
+    razon = models.TextField(null=True, blank=True)
     comentario = models.TextField(null=True, blank=True)
 
     uniqueId = models.CharField(null=True,blank=True,unique=True,max_length=100)
