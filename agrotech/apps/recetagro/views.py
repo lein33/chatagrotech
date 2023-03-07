@@ -5,6 +5,7 @@ from django.conf import settings
 from .functions import *
 from .models import *
 import json
+from django.views.generic import TemplateView
 
 from django.http import HttpResponse
 
@@ -12,8 +13,9 @@ from django.http import HttpResponse
 import pdfkit
 from django.template.loader import get_template
 import os
-def home(request):
-    return render(request,'services.html',{'servicios':Servicios.objects.all()})
+class home(TemplateView):
+    template_name = 'index.html'
+    
 
 @csrf_exempt
 def whatsAppWebhook(request):
