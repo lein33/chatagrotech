@@ -95,9 +95,9 @@
 				<h1 class="maintitle">
 				<span>Descripcion general</span>
 				</h1>
-				{% for about in about %}
+				{% for servicio in servicios %}
 				<p>
-					<span class="dropcap">D</span>{{about.descripcion_general}}
+					<span class="dropcap">D</span>{{servicio.descripcion_general}}
 				</p>
 				<ul class="icons">
 					<li><i class="icon-double-angle-right"></i> Pendiente </li>
@@ -114,7 +114,7 @@
 					<div>
 						<div class="testimonial">
 						{% for about in about %}	
-							<img src="http://placehold.it/90x90" class="avatarspic" alt=""> {{ about.comentario }}
+							<img src="http://placehold.it/90x90" class="avatarspic" alt=""> {{ servicio.comentario }}
 						</div>
 						<div class="author-wrapper">
 							<div class="arrow">
@@ -142,17 +142,18 @@
 					<h1 class="subtitles">
 					<span class="serviceicon"><i class="icon-pushpin rotate"></i></span><br/>
 					asesoramiento en agroquimicos</h1>
-					{% for about in about %}
+					{% for servicio in servicios %}
 					<p>
-						 {{about.servicios}}
+						 {{servicio.servicio_uno}}
 					</p>
-					{% endfor %}
+					
 				</div>
 				<div class="c4">
 					<h1 class="subtitles">
 					<span class="serviceicon"><i class="icon-cog rotate"></i></span><br/>
 					asesoramiento integral</h1>
 					<p>
+						{{servicio.servicio_dos}}
 					</p>
 				</div>
 				<div class="c4">
@@ -160,8 +161,12 @@
 					<span class="serviceicon"><i class="icon-envelope rotate"></i></span><br/>
 					formacion</h1>
 					<p>
+						{{servicio.servicio_tres}}
+
 					</p>
+					{% endfor %}
 				</div>
+				
 			</div>
 			<!-- END SERVICES-->
 			
@@ -170,10 +175,10 @@
 				<h1 class="maintitle">
 				<span>Razones para elegirnos</span>
 				</h1>
-				{% for about in about %}
+				{% for servicio in servicios %}
 				<dl class="faqs nopadding noborder">
-					<dt>{{about.id}}</dt>
-					<dd style="display: none;">{{about.razones}}</dd>
+					<dt>{{servicio.id}}</dt>
+					<dd style="display: none;">{{servicio.razon}}</dd>
 					
 				</dl>
 				{% endfor %}
