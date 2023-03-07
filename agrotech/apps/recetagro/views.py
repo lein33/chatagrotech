@@ -5,7 +5,7 @@ from django.conf import settings
 from .functions import *
 from .models import *
 import json
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView,ListView
 
 from django.http import HttpResponse
 
@@ -15,7 +15,11 @@ from django.template.loader import get_template
 import os
 class home(TemplateView):
     template_name = 'index.html'
-    
+
+class Servicios(ListView):
+    model=Servicios
+    template_name = 'services.html'
+
 
 @csrf_exempt
 def whatsAppWebhook(request):
