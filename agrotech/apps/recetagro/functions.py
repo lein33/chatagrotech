@@ -58,11 +58,15 @@ def Servicios(chat):
     servicio_dos_ia.start()
     servicio_tres_ia.start()
 
-    about = About.objects.create(
+    about = Servicios.objects.create(
         descripcion_general=descripcion_industria.join(),
-        servicios=servicios_ia.join(),
-        razones=razones_ia.join(),
+        servicio=servicios_ia.join(),
+        servicio_uno=servicio_uno_ia.join(),
+        servicio_dos=servicio_dos_ia.join(),
+        servicio_tres=servicio_tres_ia.join(),
+        razon=razones_ia.join(),
         comentario=comentario_ia.join(),
+
     )
     about.save()
     sendWhatsAppMessage(chat.phoneNumber,"terminado")
