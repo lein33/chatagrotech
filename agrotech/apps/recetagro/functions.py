@@ -41,7 +41,7 @@ def sendWhatsAppMessage(phoneNumber, message):
     ans = response.json()
     return ans
 
-def Servicios(chat):
+def CrearServicios(chat):
     descripcion_industria = CustomThread(target=descripcion_general,args=(chat.tipo_industria,chat.tipo_servicio))
     servicios_ia = CustomThread(target=servicios,args=(chat.tipo_industria,chat.tipo_servicio))
     razones_ia = CustomThread(target=razones,args=(chat.tipo_industria,chat.tipo_servicio,chat.tamaño_industria))
@@ -101,7 +101,7 @@ def handleWhatsAppChat(fromId, profileName, phoneId,text):
                 if chat.comentario:
                     message ="danos un momento"
                     sendWhatsAppMessage(fromId,message)
-                    CrearAbout(chat)
+                    CrearServicios(chat)
                     return ''
                 else:
                     chat.comentario=text
