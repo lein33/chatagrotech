@@ -165,10 +165,13 @@
 					<h1 class="subtitles">
 					<span class="serviceicon"><i class="icon-envelope rotate"></i></span><br/>
 					formacion</h1>
+					{% for servicio in servicios %}
+
 					<p>
 						{{servicio.servicio_tres}}
 
 					</p>
+					{% endfor %}
 				</div>
 				
 			</div>
