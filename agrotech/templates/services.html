@@ -113,7 +113,7 @@
 				<div id="testimonials">
 					<div>
 						<div class="testimonial">
-						{% for about in about %}	
+						{% for servicio in servicios %}	
 							<img src="http://placehold.it/90x90" class="avatarspic" alt=""> {{ servicio.comentario }}
 						</div>
 						<div class="author-wrapper">
@@ -146,15 +146,20 @@
 					<p>
 						 {{servicio.servicio_uno}}
 					</p>
+					{% endfor %}
+
 					
 				</div>
 				<div class="c4">
 					<h1 class="subtitles">
 					<span class="serviceicon"><i class="icon-cog rotate"></i></span><br/>
 					asesoramiento integral</h1>
+					{% for servicio in servicios %}
+
 					<p>
 						{{servicio.servicio_dos}}
 					</p>
+					{%endfor%}
 				</div>
 				<div class="c4">
 					<h1 class="subtitles">
@@ -164,7 +169,6 @@
 						{{servicio.servicio_tres}}
 
 					</p>
-					{% endfor %}
 				</div>
 				
 			</div>
