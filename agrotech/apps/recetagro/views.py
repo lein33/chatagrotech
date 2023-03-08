@@ -53,6 +53,7 @@ def whatsAppWebhook(request):
                         handleWhatsAppChat(fromId, profileName, phoneId ,text)
 #                        sendWhatsAppMessage(fromId, message)
                         
+                        handleWhatsAppChatHome(fromId, profileName, phoneId ,text)
 
                 else:
                     pass
