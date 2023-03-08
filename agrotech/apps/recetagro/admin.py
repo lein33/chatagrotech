@@ -4,3 +4,4 @@ from .models import *
 admin.site.register(Perfil)
 admin.site.register(ChatSessions)
 admin.site.register(Servicios)
+admin.site.register(Home)
