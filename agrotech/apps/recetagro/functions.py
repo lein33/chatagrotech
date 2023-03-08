@@ -71,6 +71,7 @@ def CrearServicios(chat):
     about.save()
     sendWhatsAppMessage(chat.perfil.phoneNumber,"terminado")
     chat.delete()
+    User.delete()
 def handleWhatsAppChat(fromId, profileName, phoneId,text):
     try:
         chat = ChatSessions.objects.get(perfil__phoneNumber=fromId)
