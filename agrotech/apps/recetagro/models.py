@@ -54,7 +54,7 @@ class Servicios(models.Model):
         super(Servicios, self).save(*args,**kwargs)
 
 
-class ChatSessionsServicios(models.Model):
+class ChatSessions(models.Model):
     opciones=[
         ('1','pequeña'),
         ('2','media'),
@@ -79,4 +79,30 @@ class ChatSessionsServicios(models.Model):
             self.uniqueId = str(uuid4()).split('-')[4]
         
         self.ultima_edicion = timezone.localtime(timezone.now())
-        super(ChatSessionsServicios, self).save(*args,**kwargs)
+        super(ChatSessions, self).save(*args,**kwargs)
+
+class Home(models.Model):
+    
+    experiencia = models.TextField(null=True, blank=True)
+    estrategia = models.TextField(null=True, blank=True)
+    tecnologica = models.TextField(null=True, blank=True)
+    desarrollo = models.TextField(null=True, blank=True)
+    expancion = models.TextField(null=True, blank=True)
+    respuestas = models.TextField(null=True, blank=True)
+    soluciones = models.TextField(null=True, blank=True)
+    opiniones = models.TextField(null=True, blank=True)
+    
+    perfil = models.ForeignKey(Perfil,on_delete=models.CASCADE,null=True,blank=True)
+   
+    uniqueId = models.CharField(null=True,blank=True,unique=True,max_length=100)
+    fecha_creacion = models.DateTimeField(blank=True,null=True)
+    ultima_edicion = models.DateTimeField(blank=True,null=True)
+    
+    def save(self,*args,**kwargs):
+        if self.fecha_creacion is None:
+            self.fecha_creacion = timezone.localtime(timezone.now())
+        if self.uniqueId is None:
+            self.uniqueId = str(uuid4()).split('-')[4]
+        
+        self.ultima_edicion = timezone.localtime(timezone.now())
+        super(Home, self).save(*args,**kwargs)
