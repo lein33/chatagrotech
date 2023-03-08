@@ -28,10 +28,10 @@
 			<nav id="topNav">
 			<ul id="responsivemenu">
 				<li class="active"><a href="{% url 'recetagro:home' %}"><i class="icon-home homeicon"></i></a></li>
-				<li><a href="#">Inicio</a>
+				<li><a href="{% url 'recetagro:home' %}">Inicio</a>
 				<ul style="display: none;">					
 					<li><a href="about.html">About</a></li>
-					<li><a href="services.html">Services</a></li>
+					<li><a href="{% url 'recetagro:servicios' %}">Services</a></li>
 					<li><a href="testimonials.html">Testimonials</a></li>
 					<li><a href="faq.html">F.A.Q.s</a></li>
 					<li><a href="gallery.html">Gallery</a></li>
