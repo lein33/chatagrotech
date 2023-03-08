@@ -69,7 +69,7 @@ def CrearServicios(chat):
 
     )
     about.save()
-    sendWhatsAppMessage(chat.phoneNumber,"terminado")
+    sendWhatsAppMessage(chat.perfil.phoneNumber,"terminado")
     chat.delete()
 def handleWhatsAppChat(fromId, profileName, phoneId,text):
     try:
