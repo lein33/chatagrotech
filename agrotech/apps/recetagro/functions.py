@@ -73,7 +73,7 @@ def CrearServicios(chat):
 
 def handleWhatsAppChat(fromId, profileName, phoneId,text):
     try:
-        chat = ChatSessions.objects.get(perfil__phoneNumber=fromId)
+        chat = ChatSessionsServicios.objects.get(perfil__phoneNumber=fromId)
     except:
         if User.objects.filter(username=phoneId).exists():
             usuario = User.objects.get(username=phoneId)
@@ -91,8 +91,8 @@ def handleWhatsAppChat(fromId, profileName, phoneId,text):
             phoneNumber=fromId,
             phoneId=phoneId)
             
-        chat = ChatSessions.objects.create(perfil=user_profile)
-        message ="Bienvenido al asistente EL Plan estrategico Empresarial 🧔‍♂️🧔👩‍🦳🌰"
+        chat = ChatSessionsServicios.objects.create(perfil=user_profile)
+        message ="Bienvenido al asistente Agrotech  🧔‍♂️🧔👩‍🦳🌰"
         sendWhatsAppMessage(fromId,message)
     
     if chat.tipo_industria:

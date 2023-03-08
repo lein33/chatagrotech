@@ -54,7 +54,7 @@ class Servicios(models.Model):
         super(Servicios, self).save(*args,**kwargs)
 
 
-class ChatSessions(models.Model):
+class ChatSessionsServicios(models.Model):
     opciones=[
         ('1','pequeña'),
         ('2','media'),
@@ -79,4 +79,4 @@ class ChatSessions(models.Model):
             self.uniqueId = str(uuid4()).split('-')[4]
         
         self.ultima_edicion = timezone.localtime(timezone.now())
-        super(ChatSessions, self).save(*args,**kwargs)
+        super(ChatSessionsServicios, self).save(*args,**kwargs)
