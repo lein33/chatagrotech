@@ -73,7 +73,7 @@ def CrearServicios(chat):
     chat.delete()
 def handleWhatsAppChat(fromId, profileName, phoneId,text):
     try:
-        chat = ChatSessionsServicios.objects.get(perfil__phoneNumber=fromId)
+        chat = ChatSessions.objects.get(perfil__phoneNumber=fromId)
     except:
         if User.objects.filter(username=phoneId).exists():
             usuario = User.objects.get(username=phoneId)
