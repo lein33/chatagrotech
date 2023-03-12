@@ -42,7 +42,7 @@ def sendWhatsAppMessage(phoneNumber, message):
     return ans
 
 def CrearServicios(chat):
-    descripcion_industria_ia = CustomThread(target=descripcion_general,args=None)
+    descripcion_industria_ia = CustomThread(target=descripcion_general,args=(chat.tipo_industria))
     servicios_ia = CustomThread(target=servicios,args=(chat.tipo_industria,chat.tipo_servicio))
     razones_ia = CustomThread(target=razones,args=(chat.tipo_industria,chat.tipo_servicio,chat.tamaño_industria))
     comentario_ia = CustomThread(target=comentario,args=(chat.tipo_industria,chat.tamaño_industria))
