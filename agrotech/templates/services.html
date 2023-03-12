@@ -113,7 +113,7 @@
 				<div id="testimonials">
 					<div>
 						<div class="testimonial">
-						{% for servicio in servicios %}	
+						{% for servicio in object_list %}	
 							<img src="http://placehold.it/90x90" class="avatarspic" alt=""> {{ servicio.comentario }}
 						</div>
 						<div class="author-wrapper">
@@ -142,7 +142,7 @@
 					<h1 class="subtitles">
 					<span class="serviceicon"><i class="icon-pushpin rotate"></i></span><br/>
 					asesoramiento en agroquimicos</h1>
-					{% for servicio in servicios %}
+					{% for servicio in object_list %}
 					<p>
 						 {{servicio.servicio_uno}}
 					</p>
@@ -154,7 +154,7 @@
 					<h1 class="subtitles">
 					<span class="serviceicon"><i class="icon-cog rotate"></i></span><br/>
 					asesoramiento integral</h1>
-					{% for servicio in servicios %}
+					{% for servicio in object_list %}
 
 					<p>
 						{{servicio.servicio_dos}}
@@ -165,7 +165,7 @@
 					<h1 class="subtitles">
 					<span class="serviceicon"><i class="icon-envelope rotate"></i></span><br/>
 					formacion</h1>
-					{% for servicio in servicios %}
+					{% for servicio in object_list %}
 
 					<p>
 						{{servicio.servicio_tres}}
@@ -182,7 +182,7 @@
 				<h1 class="maintitle">
 				<span>Razones para elegirnos</span>
 				</h1>
-				{% for servicio in servicios %}
+				{% for servicio in object_list %}
 				<dl class="faqs nopadding noborder">
 					<dt>{{servicio.id}}</dt>
 					<dd style="display: none;">{{servicio.razon}}</dd>
