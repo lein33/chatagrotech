@@ -32,7 +32,7 @@ class Perfil(models.Model):
         verbose_name_plural = 'Perfiles'
         ordering = ['id']
 class Servicios(models.Model):
-    perfil = models.ForeignKey(Perfil,on_delete=models.CASCADE,null=True,blank=True)
+    perfil = models.ForeignKey(Perfil,on_delete=models.CASCADE)
     descripcion_general = models.TextField(null=True, blank=True)
     servicio_uno = models.TextField(null=True, blank=True)
     servicio_dos = models.TextField(null=True, blank=True)
