@@ -57,11 +57,11 @@ def CrearServicios(chat):
     servicio_tres_ia.start()
 
     about = Servicios.objects.create(
-        descripcion_general=descripcion_industria_ia.join(),
-        servicio_uno=servicio_uno_ia.join(),
-        servicio_dos=servicio_dos_ia.join(),
-        servicio_tres=servicio_tres_ia.join(),
-        razon=razones_ia.join(),
+        descripcion_general="si",
+        servicio_uno="hola"
+        servicio_dos="como",
+        servicio_tres="estas",
+        razon="bien",
         comentario=razones_ia.join()
 
     )
