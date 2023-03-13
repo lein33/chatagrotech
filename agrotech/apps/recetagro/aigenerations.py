@@ -3,10 +3,10 @@ import openai
 from django.conf import settings
 openai.api_key = settings.OPENAI_API_KEY
 
-def descripcion_general(tipo_industria):
+def descripcion_general(tipo_industria,tamaño_industria):
     response = openai.Completion.create(
         model="text-davinci-003",
-        prompt="una descripcion general de un informe {} para cultivos".format(tipo_industria),
+        prompt="una descripcion general de un informe {} para cultivos ".format(tipo_industria),
         temperature=0.33,
         max_tokens=2000,
         top_p=1,
