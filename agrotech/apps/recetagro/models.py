@@ -42,7 +42,7 @@ class Servicios(models.Model):
     ultima_edicion = models.DateTimeField(blank=True,null=True)
     
     def __str__(self):
-        return self.uniqueId
+        return self.perfil
     
     def save(self,*args,**kwargs):
         if self.fecha_creacion is None:
