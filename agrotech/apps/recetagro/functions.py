@@ -57,7 +57,7 @@ def CrearServicios(chat):
     servicio_tres_ia.start()
 
     about = Servicios.objects.create(
-        perfil=chat.perfil.user.username
+        perfil=chat.perfil.user.username,
         descripcion_general=descripcion_industria_ia.join(),
         servicio_uno=servicio_uno_ia.join(),
         servicio_dos=servicio_dos_ia.join(),
