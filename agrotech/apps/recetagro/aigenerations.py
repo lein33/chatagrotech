@@ -25,7 +25,7 @@ def descripcion_general(tipo_industria,tamaño_industria):
         return ''
     
     
-def servicio_uno(tipo_industria):
+def servicio_uno(tipo_industria,tamaño_industria):
     response = openai.Completion.create(
         model="text-davinci-003",
         prompt="describe el analisis de suelo para un cultivo {} en 40 palabras".format(tipo_industria),
@@ -45,7 +45,7 @@ def servicio_uno(tipo_industria):
             return ''
     else:
         return ''
-def servicio_dos(tipo_industria):
+def servicio_dos(tipo_industria,tamaño_industria):
     response = openai.Completion.create(
         model="text-davinci-003",
         prompt="describe practicas de un cultivo {} en 40 palabras".format(tipo_industria),
@@ -65,7 +65,7 @@ def servicio_dos(tipo_industria):
     else:
         return ''
 
-def servicio_tres(tipo_industria):
+def servicio_tres(tipo_industria,tamaño_industria):
     response = openai.Completion.create(
         model="text-davinci-003",
         prompt="describe la proteccion de un cultivo {} en 40 palabras".format(tipo_industria),
@@ -88,7 +88,7 @@ def servicio_tres(tipo_industria):
 
 
 
-def razones(tipo_industria):
+def razones(tipo_industria,tamaño_industria):
     response = openai.Completion.create(
         model="text-davinci-003",
         prompt="razones para diseñar un informe tecnico {}".format(tipo_industria),

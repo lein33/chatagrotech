@@ -43,26 +43,26 @@ def sendWhatsAppMessage(phoneNumber, message):
 
 def CrearServicios(chat):
     descripcion_industria_ia =  CustomThread(target=descripcion_general,args=(chat.tipo_industria,chat.tamaño_industria))
-    #razones_ia =                CustomThread(target=razones,args=(chat.tipo_industria))
-    #servicio_uno_ia =           CustomThread(target=servicio_uno,args=(chat.tipo_industria))    
-    #servicio_dos_ia =           CustomThread(target=servicio_dos,args=(chat.tipo_industria))
-    #servicio_tres_ia =          CustomThread(target=servicio_tres,args=(chat.tipo_industria))
+    razones_ia =                CustomThread(target=razones,args=(chat.tipo_industria,chat.tamaño_industria))
+    servicio_uno_ia =           CustomThread(target=servicio_uno,args=(chat.tipo_industria,chat.tamaño_industria))    
+    servicio_dos_ia =           CustomThread(target=servicio_dos,args=(chat.tipo_industria,chat.tamaño_industria))
+    servicio_tres_ia =          CustomThread(target=servicio_tres,args=(chat.tipo_industria,chat.tamaño_industria))
 
     
 
     descripcion_industria_ia.start()
-    #razones_ia.start()
-    #servicio_uno_ia.start()
-    #servicio_dos_ia.start()
-    #servicio_tres_ia.start()
+    razones_ia.start()
+    servicio_uno_ia.start()
+    servicio_dos_ia.start()
+    servicio_tres_ia.start()
 
     about = Servicios.objects.create(
         descripcion_general=descripcion_industria_ia.join(),
-        servicio_uno="hola",
-        servicio_dos="como",
-        servicio_tres="estas",
-        razon="bien",
-        comentario="si"
+        servicio_uno=servicio_uno_ia.join(),
+        servicio_dos=servicio_dos_ia.join(),
+        servicio_tres=servicio_tres_ia.join(),
+        razon=razones_ia.join(),
+        comentario=chat.comentario
     )
     about.save()
     sendWhatsAppMessage(chat.perfil.phoneNumber,"terminado")
