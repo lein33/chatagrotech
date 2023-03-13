@@ -55,10 +55,8 @@ def CrearServicios(chat):
     servicio_uno_ia.start()
     servicio_dos_ia.start()
     servicio_tres_ia.start()
-    perfil = Perfil(user=chat.perfil.user)
 
     about = Servicios.objects.create(
-        perfil=perfil.user.username,
         descripcion_general=descripcion_industria_ia.join(),
         servicio_uno=servicio_uno_ia.join(),
         servicio_dos=servicio_dos_ia.join(),
