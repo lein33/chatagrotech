@@ -27,7 +27,10 @@ class Perfil(models.Model):
         
         self.ultima_edicion = timezone.localtime(timezone.now())
         super(Perfil, self).save(*args,**kwargs)
-
+    class Meta:
+        verbose_name = 'Perfil'
+        verbose_name_plural = 'Perfiles'
+        ordering = ['id']
 class Servicios(models.Model):
     perfil = models.ForeignKey(Perfil,on_delete=models.CASCADE,null=True,blank=True)
     descripcion_general = models.TextField(null=True, blank=True)
