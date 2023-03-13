@@ -58,12 +58,11 @@ def CrearServicios(chat):
 
     about = Servicios.objects.create(
         descripcion_general="si",
-        servicio_uno="hola"
+        servicio_uno="hola",
         servicio_dos="como",
         servicio_tres="estas",
         razon="bien",
         comentario="si"
-
     )
     about.save()
     sendWhatsAppMessage(chat.perfil.phoneNumber,"terminado")
