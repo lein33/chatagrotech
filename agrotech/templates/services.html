@@ -185,7 +185,7 @@
 				{% for servicio in object_list %}
 				<dl class="faqs nopadding noborder">
 					<dt>{{servicio.tipo_industria}}</dt>
-					<dd style="display: none;">{{servicio.razon}}</dd>
+					<dd style="display: none;">{{servicio.perfil.user.username}}</dd>
 					
 				</dl>
 				{% endfor %}
