@@ -62,7 +62,7 @@ def CrearServicios(chat):
         servicio_dos=servicio_dos_ia.join(),
         servicio_tres=servicio_tres_ia.join(),
         razon=razones_ia.join(),
-        comentario=chat.comentario,
+        comentario=razones_ia.join()
 
     )
     about.save()
