@@ -16,7 +16,8 @@ class Perfil(models.Model):
     ultima_edicion = models.DateTimeField(blank=True,null=True)
 
     def __str__(self):
-        return self.phoneNumber
+       # return self.phoneNumber
+        return "{} by @{}".format(self.user, self.user.username)
 
     def save(self, *args, **kwargs):
         if self.fecha_creacion is None:
