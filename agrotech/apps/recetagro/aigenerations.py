@@ -6,7 +6,7 @@ openai.api_key = settings.OPENAI_API_KEY
 def descripcion_general(tipo_industria):
     response = openai.Completion.create(
         model="text-davinci-003",
-        prompt="ayudame con una descripcion general de un informe agricola de un cultivo para la empresa {}".format(tipo_industria),
+        prompt="una descripcion general de un informe {} para cultivos".format(tipo_industria),
         temperature=0.33,
         max_tokens=2000,
         top_p=1,
@@ -18,39 +18,17 @@ def descripcion_general(tipo_industria):
     if 'choices' in response:
         if len(response['choices'])>0:
             answer = response['choices'][0]['text'].replace('\n','\n')
-            return tipo_industria+answer
+            return answer
         else:
             return ''
     else:
         return ''
     
-
-
-def servicios(tipo_industria,servicios):
-    response = openai.Completion.create(
-        model="text-davinci-003",
-        prompt="Describe varios servicios que la industria {} empleando {} los servicios gana mercado".format(tipo_industria,servicios),
-        temperature=0.33,
-        max_tokens=2000,
-        top_p=1,
-        best_of=2,
-        frequency_penalty=0,
-        presence_penalty=0
-    )
-
-    if 'choices' in response:
-        if len(response['choices'])>0:
-            answer = response['choices'][0]['text'].replace('\n','\n')
-            return tipo_industria+answer
-        else:
-            return ''
-    else:
-        return ''
     
-def servicio_uno(tipo_industria,servicios):
+def servicio_uno(tipo_industria):
     response = openai.Completion.create(
         model="text-davinci-003",
-        prompt="describe en 30 palabras en que consiste un asesoramiento {} de la empresa {}".format(tipo_industria,servicios),
+        prompt="describe el analisis de suelo para un cultivo {} en 40 palabras".format(tipo_industria),
         temperature=0.33,
         max_tokens=2000,
         top_p=1,
@@ -67,10 +45,10 @@ def servicio_uno(tipo_industria,servicios):
             return ''
     else:
         return ''
-def servicio_dos(tipo_industria,servicios):
+def servicio_dos(tipo_industria):
     response = openai.Completion.create(
         model="text-davinci-003",
-        prompt="describe en 30 palabras en que consiste un {} de la empresa {}".format(servicios,tipo_industria),
+        prompt="describe practicas de un cultivo {} en 40 palabras".format(tipo_industria),
         temperature=0.33,
         max_tokens=2000,
         top_p=1,
@@ -87,10 +65,10 @@ def servicio_dos(tipo_industria,servicios):
     else:
         return ''
 
-def servicio_tres(tipo_industria,servicios):
+def servicio_tres(tipo_industria):
     response = openai.Completion.create(
         model="text-davinci-003",
-        prompt="describe en 30 palabras en que consiste {} de la empresa {}".format(servicios, tipo_industria),
+        prompt="describe la proteccion de un cultivo {} en 40 palabras".format(tipo_industria),
         temperature=0.33,
         max_tokens=2000,
         top_p=1,
@@ -110,31 +88,10 @@ def servicio_tres(tipo_industria,servicios):
 
 
 
-def razones(tipo_industria,servicios,tamaño_industria):
+def razones(tipo_industria):
     response = openai.Completion.create(
         model="text-davinci-003",
-        prompt="Describe en 50 palabras la Razon que justifique el uso de los productos {} sabiendo que el servicio mas atractivo es {} si su tamaño es {}".format(tipo_industria,servicios,tamaño_industria),
-        temperature=0.33,
-        max_tokens=2000,
-        top_p=1,
-        best_of=2,
-        frequency_penalty=0,
-        presence_penalty=0
-    )
-
-    if 'choices' in response:
-        if len(response['choices'])>0:
-            answer = response['choices'][0]['text'].replace('\n','\n')
-            return tipo_industria+answer
-        else:
-            return ''
-    else:
-        return ''
-    
-def comentario(tipo_industria,tamaño_industria):
-    response = openai.Completion.create(
-        model="text-davinci-003",
-        prompt="que argumentos deberia responder si manifiestan que los {} son muy necesarios si la empresa es {}".format(tipo_industria,tamaño_industria),
+        prompt="razones para diseñar un informe tecnico {}".format(tipo_industria),
         temperature=0.33,
         max_tokens=2000,
         top_p=1,
