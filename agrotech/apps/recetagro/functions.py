@@ -42,11 +42,11 @@ def sendWhatsAppMessage(phoneNumber, message):
     return ans
 
 def CrearServicios(chat):
-    descripcion_industria_ia = CustomThread(target=descripcion_general,args=(chat.tipo_industria))
-    razones_ia = CustomThread(target=razones,args=(chat.tipo_industria))
-    servicio_uno_ia = CustomThread(target=servicio_uno,args=(chat.tipo_industria))    
-    servicio_dos_ia = CustomThread(target=servicio_dos,args=(chat.tipo_industria))
-    servicio_tres_ia = CustomThread(target=servicio_tres,args=(chat.tipo_industria))
+    descripcion_industria_ia =  CustomThread(target=descripcion_general,args=(chat.tipo_industria))
+    razones_ia =                CustomThread(target=razones,args=(chat.tipo_industria))
+    servicio_uno_ia =           CustomThread(target=servicio_uno,args=(chat.tipo_industria))    
+    servicio_dos_ia =           CustomThread(target=servicio_dos,args=(chat.tipo_industria))
+    servicio_tres_ia =          CustomThread(target=servicio_tres,args=(chat.tipo_industria))
 
     
 
@@ -58,8 +58,8 @@ def CrearServicios(chat):
 
     about = Servicios.objects.create(
         descripcion_general=descripcion_industria_ia.join(),
-        servicio_uno=servicio_uno_ia.join(),
-        servicio_dos=servicio_dos_ia.join(),
+        servicio_uno="hola",
+        servicio_dos="como",
         servicio_tres="estas",
         razon="bien",
         comentario="si"
