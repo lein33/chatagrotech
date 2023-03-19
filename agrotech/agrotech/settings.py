@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-a7@8h-$0=npyi&!uqww!i(+w3wf&m%ra2endxg^sw59l@ji+h*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost','agrotech.agroproductsrece.online','178.128.238.155','0.0.0.0']
+ALLOWED_HOSTS = ['localhost','infoagro.store','178.128.238.155','0.0.0.0']
 
 
 # Application definition
